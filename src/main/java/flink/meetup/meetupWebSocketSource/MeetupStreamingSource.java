@@ -33,6 +33,7 @@ public class MeetupStreamingSource implements SourceFunction<MeetupRSVGevent> {
                 new URI(uri));
         clientEndPoint.addMessageHandler(new MeetupEndpoint.MessageHandler() {
             public void handleMessage(String message) {
+//                System.out.println(message);
                 ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
                 mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
                 MeetupRSVGevent event = null;
